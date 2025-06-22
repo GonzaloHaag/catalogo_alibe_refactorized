@@ -1,8 +1,14 @@
+import { useState } from 'preact/hooks';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { FilterCategories, Header, ProductsContainer, SearchProducts } from "./components";
 
 const queryClient = new QueryClient();
 export function App() {
+  const [searchValue,setSearchValue] = useState('');
+
+  const handleSearchTerm = (term:string) => {
+   setSearchValue(term)
+  }
   return (
     <QueryClientProvider client={ queryClient }>
     <div className="min-h-screen grid grid-rows-[auto_1fr]">
@@ -15,11 +21,11 @@ export function App() {
           </div>
           <div className='flex w-full flex-col justify-start md:gap-8'>
              <div className='px-4'>
-              <SearchProducts />
+              <SearchProducts searchTerm={searchValue} handleSearchTerm={handleSearchTerm} />
                 <div className='container relative flex flex-col items-center h-full mt-3'>
                   <div class="w-full text-sm text-center sm:text-left"><span class="opacity-50">532 productos</span></div>
                    {/** Productos */}
-                  <ProductsContainer />
+                  <ProductsContainer searchTerm={searchValue} />
                 </div>
              </div>
           </div>

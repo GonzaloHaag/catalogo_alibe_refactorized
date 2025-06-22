@@ -1,7 +1,10 @@
 import { getAllProducts } from "../services/queries/products";
 
-export const ProductsContainer = () => {
-  const response = getAllProducts();
+interface Props {
+  searchTerm:string;
+}
+export const ProductsContainer = ({ searchTerm } : Props) => {
+  const response = getAllProducts(searchTerm);
   if (response.isLoading) {
     return <span className="text-center text-sm w-full">Cargando productos...</span>;
   }

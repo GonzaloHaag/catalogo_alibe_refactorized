@@ -15,7 +15,7 @@ export const FilterCategories = () => {
         {
           categories?.length > 0 && (
               categories?.map((categorie) => (
-                <li key={categorie.id} title={categorie.nombre} className='bg-[#EDEDED] text-sm text-left pl-4 py-2 rounded'>
+                <li key={categorie.id} title={categorie.nombre} className='bg-[#EDEDED] text-xs text-left pl-4 py-2 rounded'>
                    {categorie.nombre}
                 </li>
               ))
