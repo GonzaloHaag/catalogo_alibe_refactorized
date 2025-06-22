@@ -1,6 +1,6 @@
 import { supabase } from '../../supabase-client';
 import type { Product } from '../../types/types';
-export const getProducts = async( searchTerm:string ):Promise<{ok:boolean,products?:Product[]}> => {
+export const getProducts = async( searchTerm:string,categorySelected:string):Promise<{ok:boolean,products?:Product[]}> => {
 
     try {
     let query = supabase
@@ -9,6 +9,9 @@ export const getProducts = async( searchTerm:string ):Promise<{ok:boolean,produc
     .order('nombre',{ascending:true})
     if(searchTerm !== '') {
         query.like('nombre',`%${searchTerm.toUpperCase()}%`)
+    }
+    if(categorySelected !== '0') {
+        query.eq('idRubro',categorySelected)
     }
     const {data,error} = await query; 
     if(error) {

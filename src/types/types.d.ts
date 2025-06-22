@@ -9,6 +9,6 @@ export interface Product {
     precio_final:number;
     iva:number;
     stock:number;
-    idRubro:number;
+    idRubro:string;
     foto:string;
 }
