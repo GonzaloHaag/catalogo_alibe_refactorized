@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider, } from '@tanstack/react-query';
 import { FilterCategories, Header, ProductsContainer, SearchProducts } from "./components";
 import type { Product } from './types/types';
 
