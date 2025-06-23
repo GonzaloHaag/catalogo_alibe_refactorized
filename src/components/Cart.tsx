@@ -34,7 +34,7 @@ export const Cart = ({ productsInCart,removeProductInCart }: CartProps) => {
   }
 
   return (
-    <div className="space-y-2 py-2">
+    <div className="space-y-2 py-2 max-h-96 overflow-y-auto">
       {productsInCart.map((product) => {
         const subtotal = product.precio_final * product.cantidad;
         const hasDiscount = product.cantidad > 3;
@@ -51,7 +51,7 @@ export const Cart = ({ productsInCart,removeProductInCart }: CartProps) => {
               src={
                 product.foto && product.foto.includes("https://")
                   ? product.foto.match(/https:\/\/\S+/)?.[0]
-                  : "../src/assets/placeholder.webp"
+                  : "/assets/placeholder.webp"
               }
               alt={product.nombre}
               className="w-10 h-10 object-cover rounded"
