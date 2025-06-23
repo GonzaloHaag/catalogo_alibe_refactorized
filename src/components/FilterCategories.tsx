@@ -23,14 +23,14 @@ export const FilterCategories = ({categorySelected,handleCategorySelected} : Pro
   ];
 
   return (
-    <ul className='category-list mt-4 md:mt-0 flex gap-4 overflow-y-visible overflow-x-auto md:overflow-x-visible md:flex-col md:w-44 lg:w-48 mx-0'>
+    <ul className='mt-4 md:mt-0 flex flex-row gap-2 overflow-x-auto md:overflow-x-visible md:flex-col md:w-44 lg:w-48 pb-2'>
         {
           categories?.length > 0 && (
               categories?.map((categorie) => (
-                <li key={categorie.id} title={categorie.nombre}>
+                <li key={categorie.id} title={categorie.nombre} className='w-full'>
                    <button 
                    type='button' 
-                  className={`${categorySelected === categorie.id ? 'bg-red-600 text-slate-100' : 'bg-[#EDEDED] text-blue-950 hover:bg-gray-200' } text-xs font-medium text-left pl-4 py-2 rounded w-full cursor-pointer transition-colors duration-200`}
+                  className={`${categorySelected === categorie.id ? 'bg-red-600 text-slate-100' : 'bg-[#EDEDED] text-blue-950 hover:bg-gray-200' } text-xs font-medium text-left px-4 py-2 rounded cursor-pointer transition-colors duration-200 whitespace-nowrap w-full md:w-full md:text-left md:px-2 md:pl-4`}
                    onClick={() => handleCategorySelected(categorie.id)}
                    >
                       {categorie.nombre}

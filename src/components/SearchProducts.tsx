@@ -5,7 +5,7 @@ interface Props {
 }
 export const SearchProducts = ({ searchTerm, handleSearchTerm } : Props) => {
     return (
-        <form className='relative'>
+        <form className='relative mt-4 md:mt-0' onSubmit={(e) => e.preventDefault()}>
             <input 
             type='text' 
             placeholder='Buscar productos...' 

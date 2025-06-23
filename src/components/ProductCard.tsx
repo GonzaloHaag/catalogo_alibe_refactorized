@@ -6,8 +6,10 @@ interface Props {
     selectedProduct: Product | null
     onOpenDialog: () => void
     onCloseDialog: () => void
+    addToProductInCart: (product: Product, productQuantity: number) => void
 }
-export const ProductCard = ({ product, selectedProduct, onOpenDialog, onCloseDialog }: Props) => {
+export const ProductCard = ({ product, selectedProduct, onOpenDialog, onCloseDialog,addToProductInCart }: Props) => {
+    
     return (
         <div
             key={product.id}
@@ -22,10 +24,10 @@ export const ProductCard = ({ product, selectedProduct, onOpenDialog, onCloseDia
                 alt={product.nombre}
                 className="m-0 object-contain h-[120px] md:h-[80px] lg:h-[120px]"
             />
-            <div className="card-body p-4 text-sm justify-between">
+            <div className="p-4 text-xs md:text-sm justify-between">
                 <div class="flex flex-col">
                     <span class="font-bold truncate">{product.nombre}</span>
-                    <span class="text-xs opacity-50">Minimo de unidades: 1</span>
+                    <span class="text-sm opacity-70 font-semibold">${product.precio_final}</span>
                 </div>
                 <div class="flex flex-col"></div>
 
@@ -34,6 +36,7 @@ export const ProductCard = ({ product, selectedProduct, onOpenDialog, onCloseDia
                     isOpen={selectedProduct?.id === product.id}
                     onOpen={onOpenDialog}
                     onClose={onCloseDialog}
+                    addToProductInCart={addToProductInCart}
                 />
             </div>
         </div>

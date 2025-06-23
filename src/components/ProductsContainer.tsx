@@ -6,8 +6,9 @@ import type { Product } from "../types/types";
 interface Props {
   searchTerm: string;
   categorySelected:number;
+  addToProductInCart: (product: Product, productQuantity: number) => void
 }
-export const ProductsContainer = ({ searchTerm,categorySelected }: Props) => {
+export const ProductsContainer = ({ searchTerm,categorySelected,addToProductInCart }: Props) => {
   const response = getAllProducts(searchTerm,categorySelected);
   if (response.isLoading) {
     return <span className="text-center text-sm w-full">Cargando productos...</span>;
@@ -55,6 +56,7 @@ export const ProductsContainer = ({ searchTerm,categorySelected }: Props) => {
               onOpenDialog={() => handleSelectProduct(product)}
               onCloseDialog={handleCloseDialog}
               selectedProduct={selectedProduct}
+              addToProductInCart={ addToProductInCart }
             />
           ))
         ) : (

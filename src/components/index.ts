@@ -4,3 +4,4 @@ export { ProductsContainer } from './ProductsContainer';
 export { ProductCard } from './ProductCard';
 export { SearchProducts } from './SearchProducts';
 export { DialogProductQuantity } from './DialogProductQuantity';
+export { Cart } from './Cart';
