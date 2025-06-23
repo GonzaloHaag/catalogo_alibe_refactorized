@@ -40,7 +40,7 @@ export const DialogProductQuantity = ({ product, isOpen, onOpen, onClose,addToPr
                 <div className={'flex items-center justify-center fixed inset-0 min-h-screen w-full bg-black/40 z-10 px-4'} onClick={onClose}>
                     <div className='bg-slate-100 w-full sm:max-w-[425px] h-auto p-4 rounded-md flex flex-col relative' onClick={(e) => e.stopPropagation()}>
                         <h4 className='flex items-center gap-x-2'><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#000000" d="M0 1h4.764l.545 2h18.078l-3.666 11H7.78l-.5 2H22v2H4.72l1.246-4.989L3.236 3H0zm7.764 11h10.515l2.334-7H5.855zM4 21a2 2 0 1 1 4 0a2 2 0 0 1-4 0m14 0a2 2 0 1 1 4 0a2 2 0 0 1-4 0" /></svg>Añadir al pedido</h4>
-                        <span className='text-slate-600 text-sm md:text-base mt-2'>{product.nombre} - <b className='text-green-600'>${product.precio_final.toFixed()}</b></span>
+                        <span className='text-slate-600 text-sm md:text-base mt-2'>{product.nombre} - <b className='text-green-600'>${product.precio_final.toFixed(2)}</b></span>
                         <div className='flex flex-col gap-y-1 mt-4'>
                             <label htmlFor='cantidad'>Cantidad</label>
                             <input value={productQuantity} onChange={(e) => setProductQuantity(Number((e.target as HTMLInputElement).value))} type="number" min={1} placeholder='Ingrese la cantidad del producto' className='w-full py-3 px-4 rounded-md border border-gray-200' />
