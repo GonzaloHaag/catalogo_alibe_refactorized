@@ -19,7 +19,7 @@ export const ProductCard = ({ product, selectedProduct, onOpenDialog, onCloseDia
                 src={
                     product.foto && product.foto.includes("https://")
                         ? product.foto.match(/https:\/\/\S+/)?.[0]
-                        : "../src/assets/placeholder.webp"
+                        : "/assets/placeholder.webp"
                 }
                 alt={product.nombre}
                 className="m-0 object-contain h-[120px] md:h-[80px] lg:h-[120px]"

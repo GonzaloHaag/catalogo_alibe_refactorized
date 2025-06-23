@@ -52,7 +52,7 @@ export const Header = ({ productsInCart, removeProductInCart }: Props) => {
       <div className="w-full md:max-w-6xl md:mx-auto flex items-center justify-between h-full">
         <a href={"/"}>
           <img
-            src={"../src/assets/LogoAlibe.avif"}
+            src={"/assets/LogoAlibe.avif"}
             alt={"Logo alibe distribuidora"}
             width={140}
             height={40}
