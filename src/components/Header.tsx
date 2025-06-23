@@ -86,7 +86,7 @@ export const Header = ({ productsInCart, removeProductInCart }: Props) => {
           <div className="fixed inset-0 bg-black/40 bg-opacity-50 z-40 opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-300 ease-in-out"></div>
 
           {/* Cart sidebar */}
-          <div className="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 transform translate-x-full peer-checked:translate-x-0 transition-transform duration-300 ease-in-out">
+          <div className="fixed top-0 right-0 min-h-dvh w-80 bg-white shadow-2xl z-50 transform translate-x-full peer-checked:translate-x-0 transition-transform duration-300 ease-in-out">
             <div className="p-6 h-full flex flex-col">
               {/* Cart header */}
               <div className="flex items-center justify-between mb-6">
