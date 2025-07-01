@@ -1,5 +1,6 @@
 import { useState, useEffect } from "preact/hooks";
 import type { Product } from "../types/types";
+import { toast } from "sonner";
 
 interface Props {
   product: Product;
@@ -32,6 +33,7 @@ export const DialogProductQuantity = ({
     addToProductInCart(product, productQuantity);
     onClose();
     setProductQuantity(1);
+    toast.success("Producto agregado exitosamente!");
   };
   return (
     <>

@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.1.10",
     "@tanstack/react-query": "4",
     "preact": "^10.26.5",
+    "sonner": "^2.0.5",
     "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
